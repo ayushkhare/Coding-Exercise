@@ -1,5 +1,6 @@
 package sample.com.codingexercise;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
+import sample.com.codingexercise.Constants.Constant;
 import sample.com.codingexercise.Model.ArticleModel;
 import sample.com.codingexercise.databinding.ActivityAddArticleBinding;
 
@@ -33,7 +35,10 @@ public class AddArticleActivity extends AppCompatActivity {
     }
 
     public void onClickPostButton(View view, String content) {
-        //TODO send article content back to main page
+        Intent data = new Intent();
+        data.putExtra(Constant.ARTICLE_CONTENT, content);
+        setResult(RESULT_OK, data);
+        finish();
     }
 
     @Override
