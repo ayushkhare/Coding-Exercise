@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">CodingExercise</string>
-    <string name="add_article_title">Add Article</string>
-    <string name="post_article_button_text">Post</string>
-    <string name="input_text_hint">Content</string>
 </resources>

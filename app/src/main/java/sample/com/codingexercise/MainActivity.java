@@ -1,12 +1,7 @@
 package sample.com.codingexercise;
 
-import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-
-import sample.com.codingexercise.databinding.ActivityMainBinding;
+import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,12 +9,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setListener(this);
-    }
-
-    public void onClickAddButton(View view) {
-        Intent intent = new Intent(MainActivity.this, AddArticleActivity.class);
-        startActivity(intent);
     }
 }
