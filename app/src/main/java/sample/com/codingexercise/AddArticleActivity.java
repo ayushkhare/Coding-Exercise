@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 /**
  * Created by ayush on 17/6/17
@@ -17,6 +18,7 @@ public class AddArticleActivity extends AppCompatActivity {
         setTitle(getString(R.string.add_article_title));
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
 
     @Override
