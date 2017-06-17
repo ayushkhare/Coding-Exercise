@@ -1,5 +1,6 @@
 package sample.com.codingexercise;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickAddButton(View view) {
-        //TODO implement add article feature
+        Intent intent = new Intent(MainActivity.this, AddArticleActivity.class);
+        startActivity(intent);
     }
-
 }

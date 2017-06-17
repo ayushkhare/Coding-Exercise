@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CodingExercise</string>
+    <string name="add_article_title">Add Article</string>
 </resources>
