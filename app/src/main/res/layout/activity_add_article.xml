@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="addArticle"
+            type="sample.com.codingexercise.AddArticleActivity" />
+
+        <variable
+            name="article"
+            type="sample.com.codingexercise.Model.ArticleModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/post_article_button"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/input_text_margin"
+            app:counterEnabled="true"
+            app:counterMaxLength="250">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_text_hint"
+                android:maxLength="250"
+                android:text="@={article.content}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/post_article_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@color/colorAccent"
+            android:onClick="@{(view) -> addArticle.onClickPostButton(view, article.content)}"
+            android:text="@string/post_article_button_text"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</layout>
