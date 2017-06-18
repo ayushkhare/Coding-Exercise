@@ -27,7 +27,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/input_text_margin">
+            android:background="?attr/selectableItemBackground"
+            android:onClick="@{(v) -> actionListener.onItemClick(v, article)}"
+            android:padding="@dimen/input_text_margin">
 
             <TextView
                 android:id="@+id/content"
@@ -83,7 +85,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/content"
                 android:textColor="@color/grey300"
-                android:onClick="@{(v) -> actionListener.onItemClick(v, article)}"
                 android:layout_marginTop="@dimen/vote_count_margin"
                 android:layout_toStartOf="@+id/chevron_image"
                 android:text="@string/read_more"

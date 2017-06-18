@@ -1,14 +1,19 @@
 package sample.com.codingexercise.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.List;
 
 import sample.com.codingexercise.ArticleClickHandler;
+import sample.com.codingexercise.ArticleDetailsActivity;
+import sample.com.codingexercise.Event.PassArticleDataEvent;
 import sample.com.codingexercise.Model.ArticleModel;
 import sample.com.codingexercise.databinding.ItemTopicLayoutBinding;
 
@@ -39,7 +44,9 @@ public class TopicListAdapter extends RecyclerView.Adapter<TopicListAdapter.View
         holder.binding.setActionListener(new ArticleClickHandler() {
             @Override
             public void onItemClick(View view, ArticleModel article) {
-                //TODO handle click
+                Intent intent = new Intent(context, ArticleDetailsActivity.class);
+                EventBus.getDefault().postSticky(new PassArticleDataEvent(article));
+                context.startActivity(intent);
             }
         });
     }
@@ -51,6 +58,7 @@ public class TopicListAdapter extends RecyclerView.Adapter<TopicListAdapter.View
 
     public void setData(List<ArticleModel> topicList) {
         this.topicList = topicList;
+        notifyDataSetChanged();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
