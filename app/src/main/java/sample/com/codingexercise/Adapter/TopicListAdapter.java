@@ -3,10 +3,12 @@ package sample.com.codingexercise.Adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
 
+import sample.com.codingexercise.ArticleClickHandler;
 import sample.com.codingexercise.Model.ArticleModel;
 import sample.com.codingexercise.databinding.ItemTopicLayoutBinding;
 
@@ -31,9 +33,15 @@ public class TopicListAdapter extends RecyclerView.Adapter<TopicListAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         ArticleModel article = topicList.get(position);
         holder.bind(article);
+        holder.binding.setActionListener(new ArticleClickHandler() {
+            @Override
+            public void onItemClick(View view, ArticleModel article) {
+                //TODO handle click
+            }
+        });
     }
 
     @Override
