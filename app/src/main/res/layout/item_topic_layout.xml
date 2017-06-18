@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="article"
+            type="sample.com.codingexercise.Model.ArticleModel" />
+    </data>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/article_info_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/cardview_corner_radius"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/input_text_margin">
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="@{article.content}"
+                tools:text="The Recycler View and Card View widgets are part of v7 Support Libraries. To use these widgets in your projects" />
+
+            <ImageView
+                android:id="@+id/upvote_image"
+                android:layout_width="@dimen/vote_image_size"
+                android:layout_height="@dimen/vote_image_size"
+                android:layout_below="@id/content"
+                android:layout_marginTop="@dimen/vote_image_margin"
+                android:src="@drawable/ic_upvote" />
+
+            <TextView
+                android:id="@+id/upvote_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/content"
+                android:layout_marginTop="@dimen/vote_count_margin"
+                android:layout_toEndOf="@id/upvote_image"
+                android:text="@{String.valueOf(article.upVotes)}"
+                android:textSize="14sp"
+                tools:text="56" />
+
+            <ImageView
+                android:id="@+id/downvote_image"
+                android:layout_width="@dimen/vote_image_size"
+                android:layout_height="@dimen/vote_image_size"
+                android:layout_below="@id/content"
+                android:layout_marginTop="@dimen/vote_image_margin"
+                android:layout_toEndOf="@id/upvote_count"
+                android:src="@drawable/ic_downvote" />
+
+            <TextView
+                android:id="@+id/downvote_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/content"
+                android:layout_marginTop="@dimen/vote_count_margin"
+                android:layout_toEndOf="@id/downvote_image"
+                android:text="@{String.valueOf(article.downVotes)}"
+                android:textSize="14sp"
+                tools:text="56" />
+
+            <TextView
+                android:id="@+id/read_more_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/content"
+                android:layout_marginTop="@dimen/vote_count_margin"
+                android:layout_toStartOf="@+id/chevron_image"
+                android:text="@string/read_more"
+                tools:text="Read More" />
+
+            <ImageView
+                android:id="@+id/chevron_image"
+                android:layout_width="@dimen/vote_image_size"
+                android:layout_height="@dimen/vote_image_size"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/content"
+                android:layout_marginTop="@dimen/vote_image_margin"
+                android:src="@drawable/ic_chevron_right" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

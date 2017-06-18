@@ -3,4 +3,8 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="button_margin">16dp</dimen>
     <dimen name="input_text_margin">16dp</dimen>
+    <dimen name="cardview_corner_radius">4dp</dimen>
+    <dimen name="vote_image_margin">8dp</dimen>
+    <dimen name="vote_image_size">24dp</dimen>
+    <dimen name="vote_count_margin">10dp</dimen>
 </resources>

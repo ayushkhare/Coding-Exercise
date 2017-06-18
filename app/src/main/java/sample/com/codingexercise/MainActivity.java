@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 articleModel.setUpVotes(0);
                 articleModel.setDownVotes(0);
                 mTopicList.add(articleModel);
+                mAdapter.setData(mTopicList);
             }
         }
     }
