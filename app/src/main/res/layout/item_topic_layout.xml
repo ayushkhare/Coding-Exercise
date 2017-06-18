@@ -18,8 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:cardCornerRadius="@dimen/cardview_corner_radius"
-        app:cardUseCompatPadding="true">
+        app:cardCornerRadius="@dimen/cardview_corner_radius">
 
         <RelativeLayout
             android:layout_width="match_parent"

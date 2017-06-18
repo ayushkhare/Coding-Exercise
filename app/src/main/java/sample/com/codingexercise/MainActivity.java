@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
+        CardItemDecoration itemDecoration = new CardItemDecoration((int) Utility.getPixel(this, 8f));
+        recyclerView.addItemDecoration(itemDecoration);
     }
 
     public void onClickAddButton(View view) {
