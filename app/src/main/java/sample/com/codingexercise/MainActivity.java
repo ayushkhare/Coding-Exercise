@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<ArticleModel> mTopicList;
     private TopicListAdapter mAdapter;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +57,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == Constant.POST_ARTICLE) {
             if (resultCode == RESULT_OK) {
+                id++;
                 String content = data.getStringExtra(Constant.ARTICLE_CONTENT);
                 ArticleModel articleModel = new ArticleModel();
+                articleModel.setId(id);
                 articleModel.setContent(content);
                 articleModel.setUpVotes(0);
                 articleModel.setDownVotes(0);
                 mTopicList.add(articleModel);
                 mAdapter.setData(mTopicList);
             }
+        } else {
+            mAdapter.setData(mTopicList);
         }
     }
 }

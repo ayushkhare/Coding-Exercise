@@ -7,6 +7,10 @@
         <import type="android.view.View" />
 
         <variable
+            name="listener"
+            type="sample.com.codingexercise.ArticleDetailsActivity" />
+
+        <variable
             name="article"
             type="sample.com.codingexercise.Model.ArticleModel" />
     </data>
@@ -35,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/colorAccent"
+                android:onClick="@{(view) -> listener.onClickUpvote(view, article.upVotes + 1)}"
                 android:text="@{String.format(@string/upvote_button_text, article.upVotes)}"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
@@ -49,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/colorAccent"
-                android:text="@{String.format(@string/downvote_button_text, article.downVotes)}"
+                android:onClick="@{(view) -> listener.onClickDownvote(view, article.downVotes - 1)}"
+                android:text="@{String.format(@string/downvote_button_text, Math.abs(article.downVotes))}"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 

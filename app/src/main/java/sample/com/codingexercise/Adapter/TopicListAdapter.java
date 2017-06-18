@@ -1,5 +1,6 @@
 package sample.com.codingexercise.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import sample.com.codingexercise.ArticleClickHandler;
 import sample.com.codingexercise.ArticleDetailsActivity;
+import sample.com.codingexercise.Constants.Constant;
 import sample.com.codingexercise.Event.PassArticleDataEvent;
 import sample.com.codingexercise.Model.ArticleModel;
 import sample.com.codingexercise.databinding.ItemTopicLayoutBinding;
@@ -46,7 +48,7 @@ public class TopicListAdapter extends RecyclerView.Adapter<TopicListAdapter.View
             public void onItemClick(View view, ArticleModel article) {
                 Intent intent = new Intent(context, ArticleDetailsActivity.class);
                 EventBus.getDefault().postSticky(new PassArticleDataEvent(article));
-                context.startActivity(intent);
+                ((Activity) context).startActivityForResult(intent, Constant.UPDATE_ARTICLE);
             }
         });
     }

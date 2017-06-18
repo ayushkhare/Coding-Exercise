@@ -6,4 +6,5 @@
     <string name="read_more">Read More</string>
     <string name="upvote_button_text">Upvotes: %1$s</string>
     <string name="downvote_button_text">Downvotes: %1$s</string>
+    <string name="article_detail_title">Article Detail</string>
 </resources>

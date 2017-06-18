@@ -75,7 +75,7 @@
                 android:layout_below="@id/content"
                 android:layout_marginTop="@dimen/vote_count_margin"
                 android:layout_toEndOf="@id/downvote_image"
-                android:text="@{String.valueOf(article.downVotes)}"
+                android:text="@{String.valueOf(Math.abs(article.downVotes))}"
                 android:textSize="14sp"
                 tools:text="56" />
 
