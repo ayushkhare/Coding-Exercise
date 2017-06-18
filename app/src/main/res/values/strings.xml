@@ -3,4 +3,8 @@
     <string name="add_article_title">Add Article</string>
     <string name="post_article_button_text">Post</string>
     <string name="input_text_hint">Content</string>
+    <string name="read_more">Read More</string>
+    <string name="upvote_button_text">Upvotes: %1$s</string>
+    <string name="downvote_button_text">Downvotes: %1$s</string>
+    <string name="article_detail_title">Article Detail</string>
 </resources>

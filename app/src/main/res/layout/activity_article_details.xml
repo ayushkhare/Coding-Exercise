@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="listener"
+            type="sample.com.codingexercise.ArticleDetailsActivity" />
+
+        <variable
+            name="article"
+            type="sample.com.codingexercise.Model.ArticleModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/article_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/input_text_margin"
+            android:text="@{article.content}"
+            android:textSize="16sp"
+            tools:text="The Recycler View and Card View widgets are part of v7 Support Libraries. To use these widgets in your projects" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:onClick="@{(view) -> listener.onClickUpvote(view, article.upVotes + 1)}"
+                android:text="@{String.format(@string/upvote_button_text, article.upVotes)}"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:onClick="@{(view) -> listener.onClickDownvote(view, article.downVotes - 1)}"
+                android:text="@{String.format(@string/downvote_button_text, Math.abs(article.downVotes))}"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
+
